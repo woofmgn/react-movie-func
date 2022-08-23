@@ -13,7 +13,7 @@ function Main() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://www.omdbapi.com/?apikey=6a9aae1a&s=terminator')
+    fetch('https://www.omdbapi.com/?apikey=6a9aae1a&s=terminator')
       .then(res => res.json())
       .then(data => setMovies(data.Search))
       .catch(err => console.log(`Ошибка: ${err}`))
@@ -22,7 +22,7 @@ function Main() {
 
   const searchMovie = (dataSearch, type = 'all') => {
     setLoading(true);
-    fetch(`http://www.omdbapi.com/?apikey=6a9aae1a&s=${dataSearch}${type !== 'all' ? `&type=${type}` : ''}`)
+    fetch(`https://www.omdbapi.com/?apikey=6a9aae1a&s=${dataSearch}${type !== 'all' ? `&type=${type}` : ''}`)
       .then(res => res.json())
       .then(data => setMovies(data.Search))
       .catch(err => console.log(`Ошибка: ${err}`))
